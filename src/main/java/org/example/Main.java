@@ -32,8 +32,9 @@ public class Main {
                     pipeline.addLast(new HttpServerCodec());
                     pipeline.addLast(new HttpObjectAggregator(64 * 1024));
                     pipeline.addLast(new ChunkedWriteHandler());
-//                    pipeline.addLast(new WebSocketServerProtocolHandler("/sw"));
+                    pipeline.addLast(new WebSocketServerProtocolHandler("/sw"));
                     pipeline.addLast(new NioWebSocketHandler());
+                    pipeline.addLast(new StaticResourceHandler(System.getenv().containsKey("fromBound")));
 //                    pipeline.addLast(new TextWebSocketHandler());
                 }
             });
