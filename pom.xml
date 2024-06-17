@@ -45,6 +45,7 @@
                                 <buildArg>--static</buildArg>
                                 <buildArg>--libc=musl</buildArg>
                                 <buildArg>--enable-url-protocols=https,http</buildArg>
+				<buildArg>-march=compatibility</buildArg>
 <!--                             静态资源不管怎么配置都不生效，只能换种方案了   -->
 <!--                                <buildArg>-H:IncludeResources=".*$"</buildArg>-->
 <!--                             https://blog.csdn.net/catoop/article/details/138269014   -->

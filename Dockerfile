@@ -50,7 +50,7 @@ RUN sh graal.sh
 
 
 
-RUN --mount=type=cache,mode=0777,target=/root/.m2 cd /project && mvn package -X -Dskip.native=false -Dskip.copy=false && chmod +x target/s-native
+RUN --mount=type=cache,mode=0777,target=/root/.m2 cd /project && mvn package -X -Dskip.native=false -Dskip.copy=false && chmod +x target/s-native && ls -l -h target
 
 FROM alpine
 #COPY --from=vm /vm /vm
